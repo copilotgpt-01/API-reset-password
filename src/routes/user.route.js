@@ -21,8 +21,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-// SOLO ES UN LOGIN DE PRUEBA
-router.post("/login", async (req, res) => {
+// SOLO ES UN LOGIN DE PRUEBA NO ES PARTE DE LA API
+/* router.post("/login", async (req, res) => {
   const { email, contrasena } = req.body;
   if (!email || !contrasena) {
     return res.status(400).send("Email y contraseña son requeridos");
@@ -48,7 +48,7 @@ router.post("/login", async (req, res) => {
     console.error(error);
     res.status(500).send("Error en el servidor");
   }
-});
+}); */
 
 router.post("/forgot-password", async (req, res) => {
   const { email } = req.body;
@@ -197,23 +197,8 @@ router.put("/:id", async (req, res) => {
     if (users.length === 0) {
       return res.status(404).json({ error: "Usuario no encontrado" });
     }
-
+    
     const user = users[0];
-
-    /* {
-  "usuario_id": 1,
-  "nombre": "dalto",
-  "email": "a.jesus.pech@utponiente.edu.mx",
-  "contrasena": "$2b$10$275Cr3wrPXcoGZp8ud1FyuNSO9FhQjiXVPZbkRWEh/ywkVk0pNilC",
-  "telefono": "123456789",
-  "rol_id": null,
-  "membresia_id": null,
-  "activo": 1,
-  "last_name": "pedro",
-  "resetPasswordExpire": null,
-  "resetPasswordToken": null,
-  "fotoPerfil": null
-} */
 
     const nombre = req.body.nombre || user.nombre;
     const email = req.body.email || user.email;
@@ -290,4 +275,5 @@ router.get("/:id", async (req, res) => {
     res.status(500).json({ error: "Error interno del servidor" });
   }
 });
+
 module.exports = router;

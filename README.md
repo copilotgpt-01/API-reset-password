@@ -31,6 +31,8 @@ Para levantar el proyecto en un entorno hosteado, solo necesitas actualizar los 
 
 La documentación de la API está disponible en la siguiente URL:
 
-Documentación de la API --> http://localhost:3000/api/v1/user/doc
+Documentación de la API - http://localhost:3000/api/v1/user/doc
 
 ---
+
+Si tienes alguna pregunta o necesitas más ayuda, no dudes en contactarnos.
